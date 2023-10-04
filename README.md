@@ -1,4 +1,4 @@
-![image](https://github.com/ramzibouzaiene/EmployeeManagement-SpringBoot-VueJS/assets/74255678/89996372-16a1-4c04-8d6a-3f6483a7fc46)# EmployeeManagement-SpringBoot-VueJS
+# EmployeeManagement-SpringBoot-VueJS
 Key Cloak implementation project in the front end with vue js and in the back end with spring boot/spring security.
 The frontend client will be redirected to Keycloak to sign in if the credentials are correct it will be redirected to the home page so he can add, edit, or delete an employee.
 The frontend was built with Vue js version 3, TypeScript, and CSS
