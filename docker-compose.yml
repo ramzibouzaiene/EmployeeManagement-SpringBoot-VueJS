@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: employee_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  keycloak:
+    image: jboss/keycloak
+    container_name: keycloak
+    environment:
+      KEYCLOAK_USER: ramzibouzaiene
+      KEYCLOAK_PASSWORD: 123654789
+    ports:
+      - "8081:8080"
+    depends_on:
+      - postgres
+
+  spring-boot-app:
+    build:
+      context: ./keyCKBackend
+    container_name: spring_boot_app
+    ports:
+      - "8050:8050"
+    depends_on:
+      - postgres
+      - keycloak
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/emp_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: http://keycloak:8080/auth/realms/backend-training
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI: http://keycloak:8080/auth/realms/backend-training/protocol/openid-connect/certs
+
+  vuejs-app:
+    build:
+      context: ./vue-js-keycloak
+    container_name: vuejs_app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - spring-boot-app
+      - keycloak
+    environment:
+      VUE_APP_API_URL: http://spring-boot-app:8050
+
+volumes:
+  postgres_data:

@@ -1,0 +1,12 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/backend-training
+          jwk-set-uri: http://localhost:8080/realms/backend-training/protocol/openid-connect/certs
+jwt:
+  auth:
+    converter:
+      resource-id: backend-Kc
+      principle-attribute: preferred_username

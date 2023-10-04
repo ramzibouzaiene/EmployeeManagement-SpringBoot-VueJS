@@ -1,0 +1,7 @@
+{
+  "realm": "backend-training",
+  "auth-server-url": "http://localhost:8080",
+  "resource": "proxym-training",
+  "public-client": true,
+  "confidential-port": 0
+}
