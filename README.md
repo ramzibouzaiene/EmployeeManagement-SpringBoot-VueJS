@@ -13,8 +13,10 @@ Redirect to keycloak
 ![image](https://github.com/ramzibouzaiene/EmployeeManagement-SpringBoot-VueJS/assets/74255678/603834b6-6523-4f7b-b210-35e78fbc2079)
 Home page with data table, add employee, delete or logout
 ![image](https://github.com/ramzibouzaiene/EmployeeManagement-SpringBoot-VueJS/assets/74255678/455aff16-8e3f-446f-95d9-93060d8e9ea4)
-Add 
-![image](https://github.com/ramzibouzaiene/EmployeeManagement-SpringBoot-VueJS/assets/74255678/1d360cd3-83e1-4d7a-ac86-bb4df1cc145c)
+Add New Employee
+![image](https://github.com/ramzibouzaiene/EmployeeManagement-SpringBoot-VueJS/assets/74255678/fa941ca2-c8ac-4aee-9aae-4db184c28fb0)
+Redirect to home
+![image](https://github.com/ramzibouzaiene/EmployeeManagement-SpringBoot-VueJS/assets/74255678/4b980c0b-a9ee-443f-a707-1b5fa75e810d)
 
 ### Some SccreenShot from the back end
 Authentication
